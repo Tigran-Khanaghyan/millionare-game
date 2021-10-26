@@ -5,7 +5,7 @@ export default function Welcome() {
   
   return (
     <div>
-      <MainLayout children={<Content/>} />
+      <MainLayout center={<Content/>} />
     </div>
   );
 }

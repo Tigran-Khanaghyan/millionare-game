@@ -8,7 +8,7 @@ const getInitialForm = () => {
   return {
     question: "",
     rightAnswer: null,
-    answers: new Array(4).fill("").map((item) => (item = "")),
+    answers: new Array(4).fill(""),
   };
 };
 
@@ -39,20 +39,28 @@ export default function QuestionForm() {
   };
 
   return (
-    <div>
+    <div className='container'>
       <p className="text-light">Type a Question</p>
       <div>
-        <Input onChange={handleQuestion} value={form.question} type="text" />
+        <textarea
+          onChange={handleQuestion}
+          value={form.question}
+          type='textarea'
+          className="question"
+        />
       </div>
       {form.answers.map((_, index) => {
         return (
           <div className="checkbox" key={index}>
+            <div className="checkbox-check">
+              <Input
+                type="checkbox"
+                onChange={handleRightAnswer.bind(null, index)}
+                checked={form.rightAnswer === index}
+              />
+            </div>
             <Input
-              type="checkbox"
-              onChange={handleRightAnswer.bind(null, index)}
-              checked={form.rightAnswer === index}
-            />
-            <Input
+              className="checkbox-text"
               type="text"
               onChange={handleAnswer.bind(null, index)}
               value={form.answers[index]}
@@ -62,7 +70,7 @@ export default function QuestionForm() {
       })}
 
       <Button
-        className="btn-success"
+        className="btn-success add-question"
         children="Add Question"
         onClick={addQuestion}
       />
