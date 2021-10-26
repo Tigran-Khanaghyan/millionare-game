@@ -1,13 +1,41 @@
 .left {
-  position: absolute;
-  top: 50px;
+  margin: 10px;
   width: 20%;
 }
 
 .center {
   width: 60%;
+  display: flex;
+  justify-content: center;
 }
 
 .right {
+  display: flex;
   width: 20%;
+}
+
+.game {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.info {
+  margin: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 5px solid green;
+
+  &-queue {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  &-score {
+    color: white;
+  }
+  &-help {
+    color: white;
+  }
 }

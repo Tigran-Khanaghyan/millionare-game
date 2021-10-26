@@ -40,7 +40,7 @@ export default function QuestionForm() {
 
   return (
     <div className='container'>
-      <p className="text-light">Type a Question</p>
+      <p className="text-light">Add a new Question</p>
       <div>
         <textarea
           onChange={handleQuestion}
