@@ -5,7 +5,7 @@ import Welcome from "./routes/Welcome";
 export default function Dashboard() {
   return (
     <Switch>
-      <Route path="/" component={Welcome} />
+      <Route exact path="/" component={Welcome} />
       <Route path="/game" component={Game} />
     </Switch>
   );
