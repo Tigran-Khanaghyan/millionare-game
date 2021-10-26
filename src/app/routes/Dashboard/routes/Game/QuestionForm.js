@@ -1,16 +1,21 @@
 import Input from "shared/components/Input";
 import Button from "shared/components/Button";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { onSetQuestions } from "../../actions";
+
+const getInitialForm = () => {
+  return {
+    question: "",
+    rightAnswer: null,
+    answers: new Array(4).fill("").map((item) => (item = "")),
+  };
+};
 
 export default function QuestionForm() {
-  const getInitialForm = () => {
-    return {
-      question: "",
-      rightAnswer: null,
-      answers: new Array(4).fill(""),
-    };
-  };
   const [form, setForm] = useState(getInitialForm());
+
+  const dispatch = useDispatch();
 
   const handleQuestion = (event) => {
     const tempForm = { ...form };
@@ -29,8 +34,10 @@ export default function QuestionForm() {
     setForm(temp);
   };
   const addQuestion = () => {
+    dispatch(onSetQuestions(form));
     setForm(getInitialForm());
   };
+
   return (
     <div>
       <p className="text-light">Type a Question</p>
@@ -45,7 +52,11 @@ export default function QuestionForm() {
               onChange={handleRightAnswer.bind(null, index)}
               checked={form.rightAnswer === index}
             />
-            <Input type="text" onChange={handleAnswer.bind(null, index)} />
+            <Input
+              type="text"
+              onChange={handleAnswer.bind(null, index)}
+              value={form.answers[index]}
+            />
           </div>
         );
       })}
