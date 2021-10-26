@@ -16,6 +16,21 @@ const initialState = {
       rightAnswer: 1,
       answers: ["S++", "Java Script", "Windows Script", "Photoshop"],
     },
+    {
+      question: "Which one is not an operating system?",
+      rightAnswer: 0,
+      answers: ["Tesla", "Microsoft Windows", "macOs", "Linux"],
+    },
+    {
+      question: "... is the brain of any computer system.",
+      rightAnswer: 2,
+      answers: ["GPS", "ABS", "CPU", "RAM"],
+    },
+    {
+      question: "One of them is not an OSI model layer.",
+      rightAnswer: 2,
+      answers: ["Application", "Network", "Protocol", "Session"],
+    },
   ],
 };
 
