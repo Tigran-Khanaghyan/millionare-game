@@ -12,7 +12,7 @@ export default function GameInfo({ questionIndex }) {
       <div className="info-queue">
         {questions.map((_, index) => {
           return (
-            <div>
+            <div className={questionIndex === index ? 'info-current' : null}>
               <p className="text-light">{index + 1}</p>
             </div>
           );

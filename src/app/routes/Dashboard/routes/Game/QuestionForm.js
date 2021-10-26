@@ -2,7 +2,7 @@ import Input from "shared/components/Input";
 import Button from "shared/components/Button";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { onSetQuestions } from "../../actions";
+import { onSetCurrentQuestion, onSetQuestions } from "../../actions";
 
 const getInitialForm = () => {
   return {
@@ -35,17 +35,18 @@ export default function QuestionForm() {
   };
   const addQuestion = () => {
     dispatch(onSetQuestions(form));
+    dispatch(onSetCurrentQuestion(form));
     setForm(getInitialForm());
   };
 
   return (
-    <div className='container'>
+    <div className="container">
       <p className="text-light">Add a new Question</p>
       <div>
         <textarea
           onChange={handleQuestion}
           value={form.question}
-          type='textarea'
+          type="textarea"
           className="question"
         />
       </div>

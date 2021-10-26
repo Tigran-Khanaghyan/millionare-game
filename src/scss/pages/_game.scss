@@ -31,11 +31,22 @@
   &-queue {
     display: flex;
     flex-direction: column-reverse;
+
+    & div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+    }
   }
   &-score {
     color: white;
   }
   &-help {
     color: white;
+  }
+  &-current {
+    background-color: green;
+    border-radius: 10px;
   }
 }
