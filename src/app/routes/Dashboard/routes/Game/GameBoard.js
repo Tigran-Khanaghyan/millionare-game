@@ -5,12 +5,14 @@ export default function GameBoard({
   questionIndex,
   setQuestionIndex,
   setGameOver,
+  setHelp,
 }) {
   const handleClick = (index) => {
     if (index === questions[questionIndex].rightAnswer) {
       if (questionIndex + 1 === questions.length) {
         return;
       }
+      setHelp(false);
       setQuestionIndex(questionIndex + 1);
     } else {
       setQuestionIndex(0);

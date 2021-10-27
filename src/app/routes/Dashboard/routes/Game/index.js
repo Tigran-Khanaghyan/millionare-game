@@ -14,20 +14,23 @@ export default function Game() {
 
   const store = useSelector((state) => state);
   const questions = store.questions;
-
+  console.log(help);
   useEffect(() => {
+    const answers = document.querySelectorAll(".game-answer");
+    const rightAnswer = questions[questionIndex].rightAnswer;
+    let randomindex = getRandomIndex(0, answers.length, rightAnswer);
     if (help) {
-      const answers = document.querySelectorAll(".game-answer");
-      const rightAnswer = questions[questionIndex].rightAnswer;
-      let randomindex = getRandomIndex(0, answers.length, rightAnswer);
       answers.forEach((answer, index) => {
         if (index !== rightAnswer && index !== randomindex) {
           answer.classList.add("hide-answer");
         }
       });
+    }else {
+      answers.forEach((answer) => {
+        answer.classList.remove('hide-answer')
+      })
     }
-    // eslint-disable-next-line
-  }, [help]);
+  });
 
   return (
     <MainLayout
@@ -41,7 +44,7 @@ export default function Game() {
             questions={questions}
             questionIndex={questionIndex}
             setQuestionIndex={setQuestionIndex}
-            help={help}
+            setHelp={setHelp}
           />
         )
       }
