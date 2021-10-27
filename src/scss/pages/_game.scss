@@ -7,6 +7,7 @@
   width: 60%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .right {
@@ -17,7 +18,27 @@
 .game {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   flex-direction: column;
+
+  &-question {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border-radius: 50px;
+    background-image: linear-gradient(to bottom right, green, blue);
+    width: 600px;
+    height: 100px;
+    opacity: 0.7;
+  }
+  &-board {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
 
   &-answer {
     display: flex;
@@ -27,11 +48,18 @@
     border-radius: 50px;
     background-image: linear-gradient(to bottom right, black, blue);
     height: 50px;
+    width: 250px;
   }
+  &-answer:hover {
+    background: green;
+    cursor: pointer;
+  }
+
   .hide-answer {
     display: none;
   }
 }
+
 .info {
   margin: 10px;
   width: 100%;
@@ -63,3 +91,4 @@
     border-radius: 10px;
   }
 }
+

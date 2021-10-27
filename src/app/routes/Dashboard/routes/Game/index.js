@@ -5,9 +5,11 @@ import { getRandomIndex } from "utils/getRandomIndex";
 import GameBoard from "./GameBoard";
 import GameInfo from "./GameInfo";
 import QuestionForm from "./QuestionForm";
+import TryAgain from "./TryAgain";
 
 export default function Game() {
   const [questionIndex, setQuestionIndex] = useState(0);
+  const [gameOver, setGameOver] = useState(false);
   const [help, setHelp] = useState(false);
 
   const store = useSelector((state) => state);
@@ -31,12 +33,17 @@ export default function Game() {
     <MainLayout
       left={<QuestionForm />}
       center={
-        <GameBoard
-          questions={questions}
-          questionIndex={questionIndex}
-          setQuestionIndex={setQuestionIndex}
-          help={help}
-        />
+        gameOver ? (
+          <TryAgain setGameOver={setGameOver} />
+        ) : (
+          <GameBoard
+            setGameOver={setGameOver}
+            questions={questions}
+            questionIndex={questionIndex}
+            setQuestionIndex={setQuestionIndex}
+            help={help}
+          />
+        )
       }
       right={<GameInfo questionIndex={questionIndex} setHelp={setHelp} />}
     />

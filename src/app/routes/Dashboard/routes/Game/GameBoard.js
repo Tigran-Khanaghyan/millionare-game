@@ -4,10 +4,17 @@ export default function GameBoard({
   questions,
   questionIndex,
   setQuestionIndex,
+  setGameOver,
 }) {
   const handleClick = (index) => {
     if (index === questions[questionIndex].rightAnswer) {
+      if (questionIndex + 1 === questions.length) {
+        return;
+      }
       setQuestionIndex(questionIndex + 1);
+    } else {
+      setQuestionIndex(0);
+      setGameOver(true);
     }
   };
 
@@ -16,9 +23,11 @@ export default function GameBoard({
       <div>
         <img src={logo} alt="Millionare game logo" width="400" height="400" />
       </div>
-      <div>
-        <div>
-          <p className="text-light">{questions[questionIndex].question}</p>
+      <div className="game-board">
+        <div className="game-question">
+          <p className="h2 m-4 text-light">
+            {questions[questionIndex].question}
+          </p>
         </div>
         <div>
           {questions[questionIndex].answers.map((answer, index) => {
