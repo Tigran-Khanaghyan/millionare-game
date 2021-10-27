@@ -14,7 +14,7 @@ export default function Game() {
 
   const store = useSelector((state) => state);
   const questions = store.questions;
-  console.log(help);
+
   useEffect(() => {
     const answers = document.querySelectorAll(".game-answer");
     const rightAnswer = questions[questionIndex].rightAnswer;
@@ -25,10 +25,10 @@ export default function Game() {
           answer.classList.add("hide-answer");
         }
       });
-    }else {
+    } else {
       answers.forEach((answer) => {
-        answer.classList.remove('hide-answer')
-      })
+        answer.classList.remove("hide-answer");
+      });
     }
   });
 
