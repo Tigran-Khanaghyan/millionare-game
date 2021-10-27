@@ -18,6 +18,19 @@
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
+
+  &-answer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 5px;
+    border-radius: 50px;
+    background-image: linear-gradient(to bottom right, black, blue);
+    height: 50px;
+  }
+  .hide-answer {
+    display: none;
+  }
 }
 .info {
   margin: 10px;

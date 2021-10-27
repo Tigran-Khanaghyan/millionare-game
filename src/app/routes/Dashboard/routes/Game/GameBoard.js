@@ -1,10 +1,10 @@
-import { useSelector } from "react-redux";
 import logo from "assets/images/logo.png";
 
-export default function GameBoard({ questionIndex, setQuestionIndex }) {
-  const store = useSelector((state) => state);
-  const questions = store.questions;
-
+export default function GameBoard({
+  questions,
+  questionIndex,
+  setQuestionIndex,
+}) {
   const handleClick = (index) => {
     if (index === questions[questionIndex].rightAnswer) {
       setQuestionIndex(questionIndex + 1);
@@ -23,8 +23,12 @@ export default function GameBoard({ questionIndex, setQuestionIndex }) {
         <div>
           {questions[questionIndex].answers.map((answer, index) => {
             return (
-              <div onClick={handleClick.bind(null, index)}>
-                <p className="text-light">{answer}</p>
+              <div
+                key={index}
+                onClick={handleClick.bind(null, index)}
+                className="game-answer"
+              >
+                <p className="m-4 text-light">{answer}</p>
               </div>
             );
           })}
