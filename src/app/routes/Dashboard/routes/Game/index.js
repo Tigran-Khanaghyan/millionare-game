@@ -49,7 +49,7 @@ export default function Game() {
       timerRef.current.minute = setInterval(() => {
         timerRef.current.angle += 6;
         secondsHand.style.transform = `rotate(${timerRef.current.angle}deg)`;
-        if (timerRef.current.angle === 36) {
+        if (timerRef.current.angle === 360) {
           clearInterval(timerRef.current.minute);
           timerRef.current.angle = 0;
           setGameOver(true);
