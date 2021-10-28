@@ -82,6 +82,8 @@
   }
   &-score {
     color: white;
+    font-size: 25px;
+    font-weight: 600;
   }
   &-help {
     display: flex;
@@ -90,7 +92,7 @@
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    background-color: #00008B;
+    background-color: #00008b;
     color: white;
     font-weight: 600;
     font-size: 25px;
@@ -114,8 +116,8 @@
   text-align: center;
   width: 500px;
   height: 250px;
-  color: #FF0000;
+  color: #ff0000;
   font-size: 30px;
   font-weight: 800;
-  background-color: #ADFF2F;
+  background-color: #adff2f;
 }

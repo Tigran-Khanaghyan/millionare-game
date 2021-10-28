@@ -1,7 +1,7 @@
 .timer {
   margin-top: 100px;
+  border: 2px solid yellow;
   border-radius: 50%;
-  background: #fff ;
   background-size: 80%;
   height: 12em;
   padding-bottom: 30%;
@@ -9,7 +9,7 @@
   width: 12em;
 
   &:after {
-    background: #000;
+    background: yellow;
     border-radius: 50%;
     content: "";
     position: absolute;
@@ -30,7 +30,7 @@
   left: 0;
 }
 .seconds {
-  background: #000;
+  background: #F5FFFA;
   height: 45%;
   left: 49.5%;
   position: absolute;
@@ -39,12 +39,3 @@
   width: 2%;
   z-index: 8;
 }
-
-@keyframes rotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-// .seconds-container {
-//   animation: rotate 60s infinite linear;
-// }

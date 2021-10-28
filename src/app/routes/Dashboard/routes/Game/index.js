@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import MainLayout from "shared/components/MainLayout";
 import { getRandomIndex } from "utils/getRandomIndex";
@@ -13,6 +13,11 @@ export default function Game() {
   const [gameOver, setGameOver] = useState(false);
   const [win, setWin] = useState(false);
   const [help, setHelp] = useState(false);
+
+  const timerRef = useRef({
+    minute: 0,
+    angle: 0,
+  });
 
   const store = useSelector((state) => state);
   const questions = store.questions;
@@ -34,6 +39,25 @@ export default function Game() {
     }
   });
 
+  useEffect(() => {
+    const secondsHand = document.querySelector(".seconds-container");
+    // const timer = document.querySelector('.timer')
+    clearInterval(timerRef.current.minute);
+    timerRef.current.angle = 0;
+    secondsHand.style.transform = `rotate(0deg)`;
+    if (!gameOver) {
+      timerRef.current.minute = setInterval(() => {
+        timerRef.current.angle += 6;
+        secondsHand.style.transform = `rotate(${timerRef.current.angle}deg)`;
+        if (timerRef.current.angle === 36) {
+          clearInterval(timerRef.current.minute);
+          timerRef.current.angle = 0;
+          setGameOver(true);
+        }
+      }, 1000);
+    }
+  }, [gameOver, questionIndex]);
+
   return (
     <MainLayout
       left={<QuestionForm />}
@@ -50,6 +74,8 @@ export default function Game() {
             setQuestionIndex={setQuestionIndex}
             setHelp={setHelp}
             setWin={setWin}
+            minute={timerRef.current.minute}
+            angle={timerRef.current.angle}
           />
         )
       }

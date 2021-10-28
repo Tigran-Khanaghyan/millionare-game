@@ -1,4 +1,5 @@
 export default function Timer() {
+
   return (
     <article className="timer">
       <div className="seconds-container">
