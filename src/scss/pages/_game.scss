@@ -84,8 +84,22 @@
     color: white;
   }
   &-help {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: #00008B;
     color: white;
+    font-weight: 600;
+    font-size: 25px;
+
+    &:hover {
+      opacity: 0.5;
+    }
   }
+
   &-current {
     background-color: green;
     border-radius: 10px;
