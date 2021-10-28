@@ -41,6 +41,69 @@ const initialState = {
         "American Scientific code for information interchange",
       ],
     },
+    {
+      question:
+        "You plan the coding of your project with JavaScript. When must the object references be ready?",
+      rightAnswer: 1,
+      answers: [
+        "at compile time",
+        "at run time",
+        "at free time",
+        "at debug time",
+      ],
+    },
+    {
+      question: "When you ping the loopback address, a packet is sent where?",
+      rightAnswer: 2,
+      answers: [
+        "On the network",
+        "through the loopback dongle",
+        "Down through the layers of the IP architecture and then up the layers again",
+        "through the OS architecture",
+      ],
+    },
+    {
+      question:
+        "When a computer is first turned on or restarted, a special type of absolute loader is executed, called a",
+      rightAnswer: 1,
+      answers: [
+        "Compile and Go loader",
+        "Bootstrap loader",
+        "Boot loader",
+        "System loader",
+      ],
+    },
+    {
+      question: "Which one is not a hacking phase?",
+      rightAnswer: 0,
+      answers: [
+        "Finding target",
+        "Reconnaissance",
+        "Gaining Access",
+        "Clearing Track",
+      ],
+    },
+    {
+      question:
+        "What will be the output of the JavaScript expression: {} + [] + {} + 1 ?",
+      rightAnswer: 1,
+      answers: [
+        "[object Object][object Object][object Object][object Object]1",
+        "'0[object Object]1'",
+        "[object Object]0[object Object]1",
+        "1",
+      ],
+    },
+    {
+      question: "When data is encapsulated, which is the correct order?",
+      rightAnswer: 2,
+      answers: [
+        "Segment, data, packet, frame, bit",
+        "Data, frame, packet, segment, bit",
+        "Data, segment, packet, frame, bit",
+        "Data, segment, frame, packet, bit",
+      ],
+    },
   ],
 };
 

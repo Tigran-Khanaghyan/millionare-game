@@ -3,10 +3,10 @@
   border: 2px solid yellow;
   border-radius: 50%;
   background-size: 80%;
-  height: 12em;
+  height: 11em;
   padding-bottom: 30%;
   position: relative;
-  width: 12em;
+  width: 11em;
 
   &:after {
     background: yellow;
@@ -30,7 +30,7 @@
   left: 0;
 }
 .seconds {
-  background: #F5FFFA;
+  background: #f5fffa;
   height: 45%;
   left: 49.5%;
   position: absolute;

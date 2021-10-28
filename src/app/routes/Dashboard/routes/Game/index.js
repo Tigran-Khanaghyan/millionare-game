@@ -41,7 +41,6 @@ export default function Game() {
 
   useEffect(() => {
     const secondsHand = document.querySelector(".seconds-container");
-    // const timer = document.querySelector('.timer')
     clearInterval(timerRef.current.minute);
     timerRef.current.angle = 0;
     secondsHand.style.transform = `rotate(0deg)`;
