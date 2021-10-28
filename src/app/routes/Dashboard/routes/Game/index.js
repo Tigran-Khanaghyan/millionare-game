@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import MainLayout from "shared/components/MainLayout";
 import { getRandomIndex } from "utils/getRandomIndex";
+import Congratulation from "./Congratulation";
 import GameBoard from "./GameBoard";
 import GameInfo from "./GameInfo";
 import QuestionForm from "./QuestionForm";
@@ -10,6 +11,7 @@ import TryAgain from "./TryAgain";
 export default function Game() {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [gameOver, setGameOver] = useState(false);
+  const [win, setWin] = useState(false);
   const [help, setHelp] = useState(false);
 
   const store = useSelector((state) => state);
@@ -38,6 +40,8 @@ export default function Game() {
       center={
         gameOver ? (
           <TryAgain setGameOver={setGameOver} />
+        ) : win ? (
+          <Congratulation setWin={setWin} setQuestionIndex={setQuestionIndex} />
         ) : (
           <GameBoard
             setGameOver={setGameOver}
@@ -45,6 +49,7 @@ export default function Game() {
             questionIndex={questionIndex}
             setQuestionIndex={setQuestionIndex}
             setHelp={setHelp}
+            setWin={setWin}
           />
         )
       }
