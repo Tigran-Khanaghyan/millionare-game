@@ -3,6 +3,7 @@ import Button from "shared/components/Button";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { onSetCurrentQuestion, onSetQuestions } from "../../actions";
+import Timer from "./Timer";
 
 const getInitialForm = () => {
   return {
@@ -75,6 +76,7 @@ export default function QuestionForm() {
         children="Add Question"
         onClick={addQuestion}
       />
+      <Timer/>
     </div>
   );
 }

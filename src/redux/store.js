@@ -31,6 +31,16 @@ const initialState = {
       rightAnswer: 2,
       answers: ["Application", "Network", "Protocol", "Session"],
     },
+    {
+      question: "ASCII stands for",
+      rightAnswer: 0,
+      answers: [
+        "American standard code for information interchange",
+        "American security code for information interchange",
+        "Albanian scientific code for information interchange",
+        "American Scientific code for information interchange",
+      ],
+    },
   ],
 };
 
