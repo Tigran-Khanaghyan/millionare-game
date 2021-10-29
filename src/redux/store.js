@@ -104,6 +104,29 @@ const initialState = {
         "Data, segment, frame, packet, bit",
       ],
     },
+    {
+      question:
+        "A can do a work in 15 days and B in 20 days. If they work on it together for 4 days, then the fraction of the work that is left is :",
+      rightAnswer: 3,
+      answers: ["1/4", "3/20", "7/15", "8/15"],
+    },
+    {
+      question:
+        "The _____ type of malware collects personal information and sends it to a third party.",
+      rightAnswer: 1,
+      answers: ["Worm", "Spyware", "Browser Hijacker", "Trojan"],
+    },
+    {
+      question:
+        "Which of the following registers is used to keep track of address of the memory location where the next instruction is located?",
+      rightAnswer: 0,
+      answers: [
+        "	Program Counter",
+        "Memory Data Register",
+        "Memory Address Register",
+        "Instruction Register",
+      ],
+    },
   ],
 };
 

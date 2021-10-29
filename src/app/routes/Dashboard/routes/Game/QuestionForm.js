@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { onSetCurrentQuestion, onSetQuestions } from "../../actions";
 import Timer from "./Timer";
+import { checkForm } from "./utils/checkForm";
 
 const getInitialForm = () => {
   return {
@@ -12,7 +13,6 @@ const getInitialForm = () => {
     answers: new Array(4).fill(""),
   };
 };
-
 export default function QuestionForm() {
   const [form, setForm] = useState(getInitialForm());
 
@@ -35,6 +35,12 @@ export default function QuestionForm() {
     setForm(temp);
   };
   const addQuestion = () => {
+    const isFormValid = checkForm(form);
+
+    if (!isFormValid) {
+      return false;
+    }
+
     dispatch(onSetQuestions(form));
     dispatch(onSetCurrentQuestion(form));
     setForm(getInitialForm());
@@ -76,7 +82,7 @@ export default function QuestionForm() {
         children="Add Question"
         onClick={addQuestion}
       />
-      <Timer/>
+      <Timer />
     </div>
   );
 }
