@@ -1,5 +1,6 @@
 {
   "name": "millionaire-game",
+  "homepage": "https://www.andreasreiterer.at/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

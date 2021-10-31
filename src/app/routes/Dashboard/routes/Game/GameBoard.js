@@ -8,14 +8,16 @@ export default function GameBoard({
   setHelp,
   setWin,
 }) {
-  const handleClick = (index) => {
+  const handleClick = (index, event) => {
     if (index === questions[questionIndex].rightAnswer) {
       if (questionIndex + 1 === questions.length) {
         setWin(true);
         return;
       }
-      setHelp(false);
-      setQuestionIndex(questionIndex + 1);
+      setTimeout(() => {
+        setHelp(false);
+        setQuestionIndex(questionIndex + 1);
+      }, 1000);
     } else {
       setQuestionIndex(0);
       setGameOver(true);
