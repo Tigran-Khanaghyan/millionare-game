@@ -1,5 +1,6 @@
 import { useHistory } from "react-router-dom";
 import Button from "../../../../../shared/components/Button";
+import AuthForm from "./AuthForm";
 
 export default function Content() {
   const history = useHistory();
@@ -14,6 +15,7 @@ export default function Content() {
       <Button className="btn-success" onClick={handleClick}>
         Play Game
       </Button>
+      <AuthForm />
     </div>
   );
 }

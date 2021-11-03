@@ -1,6 +1,6 @@
 import { Switch, Route } from "react-router-dom";
 import Game from "./routes/Game";
-import Welcome from "./routes/Welcome";
+import Welcome from "../Auth/routes/Welcome";
 
 export default function Dashboard() {
   return (
